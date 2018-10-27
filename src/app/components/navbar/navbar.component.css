@@ -1,0 +1,32 @@
+.navbar .navbar-toggler-icon {
+    background-image: url("../../../assets/images/menu.png");
+  }
+
+  .navbar{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: 'Quicksand', sans-serif;
+
+  }
+
+  .bg-costume{
+      background-color: #00A8E8;
+  }
+
+.navbar-nav .nav-item .nav-link {
+    color: #FFFFFF;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    color: #00171F;
+}
+
+.navbar .dropdown a{
+    color:#00171F ;
+}
+
+.navbar .dropdown a:hover{
+    color:#00A8E8 ;
+}
+
+.navbar .dropdown i{
+    color: #007EA7;
+}
