@@ -1,0 +1,29 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Commande } from '../entities/commande';
+
+@Injectable()
+export class CommandeService {
+
+  url = "http://localhost:8080/commande";
+
+  constructor(private http:HttpClient) {
+   }
+
+
+   public getAllCommandes(){
+     return this.http.get(this.url);
+   }
+
+   public saveCommande(c:Commande){
+    return this.http.post(this.url+"/add",c);
+   }
+
+   public deleteCommande(id:number){
+     return this.http.delete(this.url+"/delete/"+id);
+   }
+
+   public getCommandeById(id){
+     return this.http.get(this.url+"/"+id);
+   }
+}

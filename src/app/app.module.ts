@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { routes} from './app.routing';
 
 import { SidebarModule } from 'ng-sidebar';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -43,7 +43,8 @@ import { AjouterProduitsComponent } from './components/produits/ajouter-produits
     RouterModule.forRoot(routes),
     SidebarModule,
     BrowserAnimationsModule,
-    DataTableModule
+    DataTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
