@@ -1,0 +1,14 @@
+.sidebar{
+    font-family: 'Karla', sans-serif;
+
+}
+.sidebar ul li a{
+    color: white;
+
+}
+.sidebar ul li a:hover{
+    color: #00171F;
+}
+
+
+

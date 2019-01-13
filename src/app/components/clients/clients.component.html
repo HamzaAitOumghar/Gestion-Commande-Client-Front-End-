@@ -1,0 +1,39 @@
+<div class="bg-light">
+
+  <h5 class="display-4 text-center">Gestion des clients</h5>
+
+  <div class="table-responsive-md">
+  
+  </div>
+  <table class="table table-hover table-striped table-bordered" [mfData]="this.clients" #mf="mfDataTable" [mfRowsOnPage]="5">
+
+      <thead>
+        <tr>
+          <td>Nom complet client </td>
+          <td>Adress</td>
+          <td>email</td>
+          <td>tele</td>   
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let cmd of mf.data'>
+          <td>{{cmd.nom}} {{cmd.prenom}}</td>
+          <td>{{cmd.adresse}} , {{cmd.ville}}</td>
+          <td>{{cmd.email}}</td>
+          <td>{{cmd.telephone}}</td>
+          <td>
+            <a><i class="fas fa-edit"></i></a>
+            <a><i class="far fa-trash-alt"></i></a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+</div>

@@ -1,9 +1,11 @@
-<div  style="width:100%;height:3px;background-color: #007EA7"> </div>
 <nav class="navbar navbar-expand-lg navbar-primary bg-costume" id="navbar">
+  <button class="navbar-toggler sidebar-toggler" type="button" data-toggle="sidebar-show">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <div class="container">
     <a class="navbar-brand">
-      <img class="img-fluid" src="../../../assets/images/shopping-bag.png" height="50px" width="50px" alt="">
+      <img class="img-fluid" (mouseleave)="setMouse('rest')" (mousedown)="setMouse('press')" (mouseenter)="setMouse('hover')"  [@changeState]="currentState" src="../../../assets/images/menu2.png" height="50px" width="50px" alt="" (click)="showSideBar()">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,23 +15,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item active">
-          <a class="nav-link text-wite" href="#"><i class="fas fa-home"></i> Accueil</a>
+          <div class="nav-link text-wite"><i class="fas fa-home"></i> Gestion des commandes clients</div>
         </li>
-       
+
       </ul>
-      
+
     </div>
     <div class="dropdown mr-auto">
-      <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user"></i> User
       </a>
-    
+
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" href="#"> <i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
 
-    
-    
+
+
   </div>
 </nav>

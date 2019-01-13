@@ -1,1 +1,9 @@
 /** https://coolors.co/app/ffffff-00171f-003459-007ea7-00a8e8 **/
+
+
+app-sidebar{
+    transition: all 2s linear;
+}
+.maxHeight{
+    height: 590px;
+}

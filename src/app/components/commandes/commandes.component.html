@@ -1,0 +1,40 @@
+<div>
+
+  <h5 class="display-4 text-center">Gestion des commandes</h5>
+
+  <div class="table-responsive-md">
+  
+  </div>
+  <table class="table table-hover table-striped table-bordered" [mfData]="this.commandes" #mf="mfDataTable" [mfRowsOnPage]="5">
+
+      <thead>
+        <tr>
+          <td>Numéro Commande </td>
+          <td>Date Commande</td>
+          <td>Date Paiment</td>
+          <td>Date Livraison</td>
+          <td>Action </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let cmd of mf.data'>
+          <td>{{cmd.numero}}</td>
+          <td>{{cmd.dateCommande}}</td>
+          <td>{{cmd.dateLivraison}}</td>
+          <td>{{cmd.datePaiment}}</td>
+          <td>
+            <a><i class="fas fa-edit"></i></a>
+            <a><i class="far fa-trash-alt"></i></a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+</div>
