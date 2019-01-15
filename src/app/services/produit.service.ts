@@ -5,7 +5,7 @@ import { Produits } from '../entities/produits';
 @Injectable()
 export class ProduitService {
 
-  url = "http://localhost:8080/produit";
+  url = "http://localhost:8080/produits";
 
   constructor(private http:HttpClient) {
    }
@@ -16,11 +16,11 @@ export class ProduitService {
    }
 
    public saveProduit(c:Produits){
-    return this.http.post(this.url+"/add",c);
+    return this.http.post(this.url+"/",c);
    }
 
    public deleteProduit(id:number){
-     return this.http.delete(this.url+"/delete/"+id);
+     return this.http.delete(this.url+"/"+id);
    }
 
    public getProduitById(id){

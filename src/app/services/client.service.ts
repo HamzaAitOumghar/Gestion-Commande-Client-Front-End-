@@ -5,7 +5,7 @@ import { Client } from '../entities/client';
 @Injectable()
 export class ClientService {
 
-  url = "http://localhost:8080/client";
+  url = "http://localhost:8080/clients";
 
   constructor(private http:HttpClient) {
    }
@@ -16,11 +16,11 @@ export class ClientService {
    }
 
    public saveClient(c:Client){
-    return this.http.post(this.url+"/add",c);
+    return this.http.post(this.url,c);
    }
 
    public deleteClient(id:number){
-     return this.http.delete(this.url+"/delete/"+id);
+     return this.http.delete(this.url+"/"+id);
    }
 
    public getClientById(id){

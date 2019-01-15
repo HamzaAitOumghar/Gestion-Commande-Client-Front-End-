@@ -6,7 +6,7 @@ import { Fournisseur } from '../entities/fournisseur';
 @Injectable()
 export class FournisseurService {
 
-  url = "http://localhost:8080/fournisseur";
+  url = "http://localhost:8080/fournisseurs";
 
   constructor(private http:HttpClient) {
    }
@@ -17,11 +17,11 @@ export class FournisseurService {
    }
 
    public saveFournisseur(c:Fournisseur){
-    return this.http.post(this.url+"/add",c);
+    return this.http.post(this.url,c);
    }
 
    public deleteFournisseur(id:number){
-     return this.http.delete(this.url+"/delete/"+id);
+     return this.http.delete(this.url+"/"+id);
    }
 
    public getFournisseurById(id){

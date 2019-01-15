@@ -3,36 +3,61 @@
 
   <h6 class="display-4 text-center">Ajouter une nouvelle commande : </h6>
 
-  <form class="mt-5 px-5">
+  <form class="mt-5 px-5" [formGroup]="form">
 
     <div class="form-row">
       <div class="col-md-12">
         <label for="date" class="col-label-form">Numero Commade</label>
-        <input class="form-control" type="number" placeholder="Numero Commande">
+        <input class="form-control" type="text" placeholder="Numero Commande" formControlName="numero">
+        <div *ngIf="this.form.get('numero').hasError('required')" class="text-danger">
+          ce champ est obligatoire
+        </div>
       </div>
     </div>
     <div class="form-row my-3">
 
       <div class="col-md-4">
         <label for="date" class="col-label-form">Date Commade</label>
-        <input class="form-control" type="date" placeholder="Date commande">
+        <input class="form-control" type="date" placeholder="Date commande" formControlName="dateCommande">
+        <div *ngIf="this.form.get('dateCommande').hasError('required')" class="text-danger">
+          ce champ est obligatoire
+        </div>
       </div>
       <div class="col-md-4">
         <label for="date" class="col-label-form">Date Paiment</label>
-        <input class="form-control" type="date" placeholder="Date paiment Commande">
+        <input class="form-control" type="date" placeholder="Date paiment Commande" formControlName="datePaiment">
+        <div *ngIf="this.form.get('datePaiment').hasError('required')" class="text-danger">
+          ce champ est obligatoire
+        </div>
       </div>
       <div class="col-md-4">
         <label for="date" class="col-label-form">Date Livraison</label>
-        <input class="form-control" type="date" placeholder="Date Livraison Commande">
+        <input class="form-control" type="date" placeholder="Date Livraison Commande" formControlName="dateLivraison">
+        <div *ngIf="this.form.get('dateLivraison').hasError('required')" class="text-danger">
+          ce champ est obligatoire
+        </div>
       </div>
 
     </div>
 
     <div class="row">
-        <button class="btn btn-outline-primary col-3 mx-auto">Ajouter</button>
-
+      <button class="btn btn-outline-primary col-3 mx-auto" (click)="addCommande()" [disabled]="!this.form.valid">Ajouter</button>
     </div>
-    
+
+    <div class="alert alert-danger alert-dismissible fade show mt-2" *ngIf="this.messageError" role="alert">
+       Erreur dans l'insertion du commande .
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="alert alert-success alert-dismissible fade show mt-2 animated fadeOut delay-3s" *ngIf="this.messageAdded" role="alert">
+      votre commande a bien été enregistrée 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+       <span aria-hidden="true">&times;</span>
+     </button>
+   </div>
+
   </form>
 
 </div>

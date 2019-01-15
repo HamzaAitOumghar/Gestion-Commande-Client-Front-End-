@@ -20,6 +20,15 @@ import { AjouterCommandeComponent } from './components/commandes/ajouter-command
 import { AjouterClientComponent } from './components/clients/ajouter-client/ajouter-client.component';
 import { AjouterFournisseurComponent } from './components/fournisseur/ajouter-fournisseur/ajouter-fournisseur.component';
 import { AjouterProduitsComponent } from './components/produits/ajouter-produits/ajouter-produits.component'
+import { ClientService } from './services/client.service';
+import { CommandeService } from './services/commande.service';
+import { FournisseurService } from './services/fournisseur.service';
+import { ProduitService } from './services/produit.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ModifierCommandeComponent } from './components/commandes/modifier-commande/modifier-commande.component';
+import { SupprimerCommandeComponent } from './components/commandes/supprimer-commande/supprimer-commande.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +44,9 @@ import { AjouterProduitsComponent } from './components/produits/ajouter-produits
     AjouterCommandeComponent,
     AjouterClientComponent,
     AjouterFournisseurComponent,
-    AjouterProduitsComponent
+    AjouterProduitsComponent,
+    ModifierCommandeComponent,
+    SupprimerCommandeComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +55,17 @@ import { AjouterProduitsComponent } from './components/produits/ajouter-produits
     SidebarModule,
     BrowserAnimationsModule,
     DataTableModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ClientService,
+    CommandeService,
+    FournisseurService,
+    ProduitService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

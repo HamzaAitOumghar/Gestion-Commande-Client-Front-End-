@@ -5,7 +5,7 @@ import { Commande } from '../entities/commande';
 @Injectable()
 export class CommandeService {
 
-  url = "http://localhost:8080/commande";
+  url = "http://localhost:8080/commandes";
 
   constructor(private http:HttpClient) {
    }
@@ -16,14 +16,17 @@ export class CommandeService {
    }
 
    public saveCommande(c:Commande){
-    return this.http.post(this.url+"/add",c);
+    return this.http.post(this.url+"/",c);
    }
 
    public deleteCommande(id:number){
-     return this.http.delete(this.url+"/delete/"+id);
+     return this.http.delete(this.url+"/"+id);
    }
 
    public getCommandeById(id){
      return this.http.get(this.url+"/"+id);
+   }
+   public modifierCommande(id,commande){
+     return this.http.put(this.url+"/"+id,commande);
    }
 }

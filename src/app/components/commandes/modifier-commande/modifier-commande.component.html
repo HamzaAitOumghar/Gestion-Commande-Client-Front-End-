@@ -1,0 +1,72 @@
+<div class="modal fade" id="modifierCommande" tabindex="-1" role="dialog" aria-labelledby="modifierCommande"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form class="px-2" [formGroup]="form">
+
+          <div class="form-row">
+            <div class="col-md-12">
+              <label for="date" class="col-label-form">Numero Commade</label>
+              <input class="form-control" type="text" placeholder="Numero Commande" formControlName="numero">
+              <div *ngIf="this.form.get('numero').hasError('required')" class="text-danger">
+                ce champ est obligatoire
+              </div>
+            </div>
+          </div>
+          <div class="form-row my-1">
+      
+            <div class="col-md-4">
+              <label for="date" class="col-label-form">Date Commade</label>
+              <input class="form-control" type="date" placeholder="Date commande" formControlName="dateCommande">
+              <div *ngIf="this.form.get('dateCommande').hasError('required')" class="text-danger">
+                ce champ est obligatoire
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="date" class="col-label-form">Date Paiment</label>
+              <input class="form-control" type="date" placeholder="Date paiment Commande" formControlName="datePaiment">
+              <div *ngIf="this.form.get('datePaiment').hasError('required')" class="text-danger">
+                ce champ est obligatoire
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="date" class="col-label-form">Date Livraison</label>
+              <input class="form-control" type="date" placeholder="Date Livraison Commande" formControlName="dateLivraison">
+              <div *ngIf="this.form.get('dateLivraison').hasError('required')" class="text-danger">
+                ce champ est obligatoire
+              </div>
+            </div>
+      
+          </div>
+      
+          <div class="alert alert-danger  mt-2" *ngIf="this.Error" role="alert">
+             Erreur dans la modification du commande .
+          </div>
+      
+          <div class="alert alert-success mt-2" *ngIf="this.Added" role="alert">
+            votre commande a bien été modifiée 
+           
+         </div>
+      
+        </form>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" (click)="modifierCommande()" [disabled]="!this.form.valid">Modifer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
